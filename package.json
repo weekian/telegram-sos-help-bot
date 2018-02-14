@@ -1,0 +1,33 @@
+{
+  "name": "telegram-sos-help-bot",
+  "version": "1.0.0",
+  "description": "Prototype to explore the use of telegram as an additional avenue to suicide prevention hotlines",
+  "main": "./src/app.js",
+  "scripts": {
+    "test": "node test",
+    "local": "heroku local web"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weekian/telegram-sos-help-bot.git"
+  },
+  "author": "Yeam Wee Kian <weekian.yeam@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/weekian/telegram-sos-help-bot/issues"
+  },
+  "homepage": "https://github.com/weekian/telegram-sos-help-bot#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.1",
+    "module-alias": "^2.0.3",
+    "socket.io": "^2.0.4",
+    "telegraf": "^3.17.5",
+    "telegraf-session-redis": "^5.0.0"
+  },
+  "devDependencies": {
+    "supertest": "^3.0.0",
+    "tape": "^4.8.0",
+    "winston": "^2.4.0"
+  }
+}
