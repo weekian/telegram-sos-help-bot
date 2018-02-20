@@ -26,6 +26,7 @@
     "telegraf-session-redis": "^5.0.0"
   },
   "devDependencies": {
+    "dotenv": "^5.0.0",
     "supertest": "^3.0.0",
     "tape": "^4.8.0",
     "winston": "^2.4.0"
