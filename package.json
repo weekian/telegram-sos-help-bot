@@ -5,7 +5,8 @@
   "main": "./src/app.js",
   "scripts": {
     "test": "node test",
-    "local": "heroku local web"
+    "local": "node -r dotenv/config index.js",
+    "eslint": "./node_modules/.bin/eslint index.js src/**.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "dotenv": "^5.0.0",
+    "eslint": "^4.18.0",
     "supertest": "^3.0.0",
     "tape": "^4.8.0",
     "winston": "^2.4.0"
