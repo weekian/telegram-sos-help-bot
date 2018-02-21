@@ -60,3 +60,6 @@ typings/
 # Bower Components
 views/static/vendors/
 
+# Sass cache
+.sass-cache/
+
