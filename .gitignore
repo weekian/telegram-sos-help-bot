@@ -58,5 +58,5 @@ typings/
 .env
 
 # Bower Components
-build/static/vendors/
+views/static/vendors/
 

@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create()
 
-var DEST = 'build/static'
+var DEST = 'views/static'
 
 gulp.task('scripts', function() {
     return gulp.src([
@@ -43,13 +43,13 @@ gulp.task('browser-sync', function() {
         server: {
             baseDir: './'
         },
-        startPath: './build/index.html'
+        startPath: './views/index.html'
     })
 })
 
 gulp.task('watch', function() {
     // Watch .html files
-    gulp.watch('build/*.html', browserSync.reload)
+    gulp.watch('views/*.html', browserSync.reload)
     // Watch .js files
     gulp.watch('assets/js/*.js', ['scripts'])
     // Watch .scss files
