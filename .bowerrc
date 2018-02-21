@@ -1,0 +1,5 @@
+{
+    "directory" : "./build/static/vendors",
+    "save": true,
+    "save-exact": true
+  }

@@ -1,0 +1,23 @@
+{
+  "name": "telegram-sos-help-bot",
+  "description": "Prototype to explore the use of telegram as an additional avenue to suicide prevention hotlines",
+  "main": "index.js",
+  "authors": [
+    "Yeam Wee Kian <weekian.yeam@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/weekian/telegram-sos-help-bot",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./build/static/vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "4.0.0",
+    "jquery": "3.3.1",
+    "popper.js": "1.12.9"
+  }
+}
