@@ -1,9 +1,12 @@
+require('dotenv').config()
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
+    url = require('url'),
+    proxy = require('proxy-middleware'),
     browserSync = require('browser-sync').create()
 
 var htmlDest = 'build/'
@@ -22,7 +25,6 @@ gulp.task('scripts', function() {
         .pipe(browserSync.stream())
 })
 
-// TODO: Maybe we can simplify how sass compile the minify and unminify version
 var compileSASS = function (filename, options) {
     return sass('views/scss/*.scss', options)
         .pipe(autoprefixer('last 2 versions', '> 5%'))
@@ -40,11 +42,15 @@ gulp.task('sass-minify', function() {
 })
 
 gulp.task('browser-sync', function() {
+    var proxyOptions = url.parse('http://localhost:' + process.env.PORT + '/api')
+    proxyOptions.route = '/api'
+    console.log(JSON.stringify(proxyOptions, null, 4))
     browserSync.init({
         server: {
-            baseDir: './'
+            baseDir: './build',
+            middleware: proxy(proxyOptions)
         },
-        startPath: './build/index.html'
+        startPath: './index.html'
     })
 })
 

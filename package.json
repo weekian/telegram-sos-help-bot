@@ -24,6 +24,7 @@
     "express": "^4.16.2",
     "jsonwebtoken": "^8.1.1",
     "module-alias": "^2.0.3",
+    "proxy-middleware": "^0.15.0",
     "socket.io": "^2.0.4",
     "telegraf": "^3.17.5",
     "telegraf-session-redis": "^5.0.0"
@@ -42,6 +43,7 @@
     "nodemon": "^1.15.1",
     "supertest": "^3.0.0",
     "tape": "^4.8.0",
+    "url": "^0.11.0",
     "winston": "^2.4.0"
   }
 }
