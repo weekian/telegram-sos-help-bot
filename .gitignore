@@ -67,3 +67,6 @@ views/static/vendors/
 nginx/nginx-access.log
 nginx/nginx-error.log
 
+# Personal notes
+TODO.md
+
