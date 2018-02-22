@@ -64,8 +64,7 @@ views/static/vendors/
 .sass-cache/
 
 # ngix logs
-nginx/nginx-access.log
-nginx/nginx-error.log
+nginx/
 
 # Personal notes
 TODO.md
