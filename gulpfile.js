@@ -6,27 +6,28 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     browserSync = require('browser-sync').create()
 
-var DEST = 'views/static'
+var htmlDest = 'build/'
+var assetsDest = 'build/static'
 
 gulp.task('scripts', function() {
     return gulp.src([
-        'assets/js/helpers/*.js',
-        'assets/js/*.js',
+        'views/js/helpers/*.js',
+        'views/js/*.js',
     ])
         .pipe(concat('custom.js'))
-        .pipe(gulp.dest(DEST+'/js'))
+        .pipe(gulp.dest(assetsDest+'/js'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
-        .pipe(gulp.dest(DEST+'/js'))
+        .pipe(gulp.dest(assetsDest+'/js'))
         .pipe(browserSync.stream())
 })
 
 // TODO: Maybe we can simplify how sass compile the minify and unminify version
 var compileSASS = function (filename, options) {
-    return sass('assets/scss/*.scss', options)
+    return sass('views/scss/*.scss', options)
         .pipe(autoprefixer('last 2 versions', '> 5%'))
         .pipe(concat(filename))
-        .pipe(gulp.dest(DEST+'/css'))
+        .pipe(gulp.dest(assetsDest+'/css'))
         .pipe(browserSync.stream())
 }
 
@@ -43,17 +44,22 @@ gulp.task('browser-sync', function() {
         server: {
             baseDir: './'
         },
-        startPath: './views/index.html'
+        startPath: './build/index.html'
     })
+})
+
+gulp.task('html', function(){
+    return gulp.src('views/*.html')
+        .pipe(gulp.dest(htmlDest))
 })
 
 gulp.task('watch', function() {
     // Watch .html files
-    gulp.watch('views/*.html', browserSync.reload)
+    gulp.watch('views/*.html', ['html',browserSync.reload])
     // Watch .js files
-    gulp.watch('assets/js/*.js', ['scripts'])
+    gulp.watch('views/js/*.js', ['scripts'])
     // Watch .scss files
-    gulp.watch('assets/scss/*.scss', ['sass', 'sass-minify'])
+    gulp.watch('views/scss/*.scss', ['sass', 'sass-minify'])
 })
 
 // Default Task
