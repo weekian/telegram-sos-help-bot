@@ -63,3 +63,7 @@ views/static/vendors/
 # Sass cache
 .sass-cache/
 
+# ngix logs
+nginx/nginx-access.log
+nginx/nginx-error.log
+
