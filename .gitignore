@@ -58,7 +58,7 @@ typings/
 .env
 
 # Bower Components
-build/static/vendors/
+public/static/vendors/
 
 # Sass cache
 .sass-cache/

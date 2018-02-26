@@ -1,5 +1,5 @@
 {
-    "directory" : "./views/static/vendors",
+    "directory" : "./public/static/vendors",
     "save": true,
     "save-exact": true
   }
