@@ -6,14 +6,13 @@ var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer')
 
-var htmlDest = 'public/'
-var assetsDest = 'public/static'
+var htmlDest = 'public/build'
+var assetsDest = 'public/build/static'
+var assetsSrc = 'public/src'
+
 
 gulp.task('scripts', function() {
-    return gulp.src([
-        'views/js/helpers/*.js',
-        'views/js/*.js',
-    ])
+    return gulp.src(assetsSrc + '/js/*.js')
         .pipe(concat('custom.js'))
         .pipe(gulp.dest(assetsDest+'/js'))
         .pipe(rename({suffix: '.min'}))
@@ -22,7 +21,7 @@ gulp.task('scripts', function() {
 })
 
 var compileSASS = function (filename, options) {
-    return sass('views/scss/*.scss', options)
+    return sass(assetsSrc + '/scss/*.scss', options)
         .pipe(autoprefixer('last 2 versions', '> 5%'))
         .pipe(concat(filename))
         .pipe(gulp.dest(assetsDest+'/css'))
@@ -37,17 +36,17 @@ gulp.task('sass-minify', function() {
 })
 
 gulp.task('html', function(){
-    return gulp.src('views/*.html')
+    return gulp.src(assetsSrc + '/*.html')
         .pipe(gulp.dest(htmlDest))
 })
 
 gulp.task('watch', function() {
     // Watch .html files
-    gulp.watch('views/*.html', ['html'])
+    gulp.watch(assetsSrc + '/*.html', ['html'])
     // Watch .js files
-    gulp.watch('views/js/*.js', ['scripts'])
+    gulp.watch(assetsSrc + '/js/*.js', ['scripts'])
     // Watch .scss files
-    gulp.watch('views/scss/*.scss', ['sass', 'sass-minify'])
+    gulp.watch(assetsSrc + '/scss/*.scss', ['sass', 'sass-minify'])
 })
 
 // Default Task

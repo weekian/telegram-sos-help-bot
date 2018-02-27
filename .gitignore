@@ -58,13 +58,16 @@ typings/
 .env
 
 # Bower Components
-public/static/vendors/
+public/build/static/vendors/
 
 # Sass cache
 .sass-cache/
 
 # ngix logs
-nginx/
+nginx/nginx-access.log
+nginx/nginx-error.log
+nginx/nginx.conf
+nginx/update-nginx-config
 
 # Personal notes
 TODO.md
