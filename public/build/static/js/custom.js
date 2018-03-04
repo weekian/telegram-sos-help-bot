@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $('form[class="form-signin"]').submit(function(e){
+        $('p[id="error-msg"]').text('')
         e.preventDefault()
         $.ajax({
             url: '/api',
@@ -11,13 +12,33 @@ $(document).ready(function(){
             accepts:{
                 text: 'application/json; charset=utf-8'
             },
-            success: function(result, status, xhr){
-                console.log(result)
-                console.log(status)
+            success: function(result){
+                location.href = result.redirect
             },
-            error: function(xhr, status, error){
-                console.log(error)
-                console.log(status)
+            error: function(xhr){
+                $('p[id="error-msg"]').text(xhr.responseJSON.message || 'something went wrong')
+            }   
+        })
+    })
+
+    $('button[id="button"]').click(function(){
+        $.ajax({
+            url: '/api/test',
+            type: 'POST',
+            data: {
+                email: 'email',
+                password: 'password'
+            },
+            accepts:{
+                text: 'application/json; charset=utf-8'
+            },
+            success: function(result){
+                // location.href = result.redirect
+                alert('success')
+            },
+            error: function(xhr){
+                alert('failure')
+                // $('p[id="error-msg"]').text(xhr.responseJSON.message || 'something went wrong')
             }   
         })
     })
