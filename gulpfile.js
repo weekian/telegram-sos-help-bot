@@ -4,7 +4,10 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     rename = require('gulp-rename'),
     sass = require('gulp-ruby-sass'),
-    autoprefixer = require('gulp-autoprefixer')
+    autoprefixer = require('gulp-autoprefixer'),
+    browserSync = require('browser-sync').create(),
+    proxy = require('proxy-middleware'),
+    url = require('url')
 
 var htmlDest = 'public/build'
 var assetsDest = 'public/build/static'
@@ -18,6 +21,7 @@ gulp.task('scripts', function() {
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
         .pipe(gulp.dest(assetsDest+'/js'))
+        .pipe(browserSync.stream())
 })
 
 var compileSASS = function (filename, options) {
@@ -25,6 +29,7 @@ var compileSASS = function (filename, options) {
         .pipe(autoprefixer('last 2 versions', '> 5%'))
         .pipe(concat(filename))
         .pipe(gulp.dest(assetsDest+'/css'))
+        .pipe(browserSync.stream())
 }
 
 gulp.task('sass', function() {
@@ -35,6 +40,18 @@ gulp.task('sass-minify', function() {
     return compileSASS('custom.min.css', {style: 'compressed'})
 })
 
+gulp.task('browser-sync', function() {
+    var proxyOptions = url.parse('http://localhost:' + process.env.PORT + '/api')
+    proxyOptions.route = '/api'
+    browserSync.init({
+        server: {
+            baseDir: './public/build',
+            middleware: proxy(proxyOptions)
+        },
+        startPath: './index.html'
+    })
+})
+
 gulp.task('html', function(){
     return gulp.src(assetsSrc + '/*.html')
         .pipe(gulp.dest(htmlDest))
@@ -42,7 +59,7 @@ gulp.task('html', function(){
 
 gulp.task('watch', function() {
     // Watch .html files
-    gulp.watch(assetsSrc + '/*.html', ['html'])
+    gulp.watch(assetsSrc + '/*.html', ['html', browserSync.reload])
     // Watch .js files
     gulp.watch(assetsSrc + '/js/*.js', ['scripts'])
     // Watch .scss files
@@ -50,4 +67,4 @@ gulp.task('watch', function() {
 })
 
 // Default Task
-gulp.task('default', ['watch'])
+gulp.task('default', ['watch', 'browser-sync'])
