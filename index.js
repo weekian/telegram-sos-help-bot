@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser')
 const log = require('./src/utility/logger')
 
 // Requiring defined routes
-const publicWebRoutes = require('./src/web/rest/public/routes')
+const webPublicRoutes = require('./src/web/routes/rest/publicRoutes')
 
 // Setting up express server
 const app = express()
@@ -21,7 +21,7 @@ app.use(express.urlencoded({
 }))
 
 // Registering routes
-app.use('/api', publicWebRoutes)
+app.use('/api', webPublicRoutes)
 
 // Listening to specified port
 app.listen(process.env.PORT, () => log('app listening to ' + process.env.PORT))
