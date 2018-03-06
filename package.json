@@ -24,6 +24,7 @@
   "dependencies": {
     "bcrypt": "^1.0.3",
     "bluebird": "^3.5.1",
+    "celebrate": "^7.0.4",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
     "express-jwt": "^5.3.0",
