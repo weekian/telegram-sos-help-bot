@@ -1,7 +1,13 @@
 {
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "script",
+        "ecmaFeatures": {
+            "impliedStrict": true
+        }
+    },
     "env": {
         "browser": true,
-        "es6": true,
         "node": true,
         "jquery": true
     },
