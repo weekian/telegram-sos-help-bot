@@ -33,12 +33,10 @@ $(document).ready(function(){
                 text: 'application/json; charset=utf-8'
             },
             success: function(result){
-                // location.href = result.redirect
-                alert('success')
+                location.href = result.redirect
             },
             error: function(xhr){
-                alert('failure')
-                // $('p[id="error-msg"]').text(xhr.responseJSON.message || 'something went wrong')
+                $('p[id="error-msg"]').text(xhr.responseJSON.message || 'something went wrong')
             }   
         })
     })
