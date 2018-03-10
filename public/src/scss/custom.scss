@@ -1,7 +1,7 @@
 html,
 body {
   height: 100%;
-  background-color: #f5f5f5;
+  background-color: #F2F5F8;
 }
 
 body.login {
@@ -55,119 +55,335 @@ body.login {
 
 /* Home page */
 
-/* Variables */
-$left-width: 250px;
-$right-width:350px;
-$bottom-height: 50px;
+/* Font imports */
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 
+/* Variables */
+$left-width: 275px;
+$right-width:400px;
+$bottom-height: 50px;
+$green: #86BB71;
+$blue: #94C2ED;
+$orange: #E38968;
+$gray: #92959E;
+$side-menu-grey: #444753;
 /* The sidebar menu */
-.left {
-  left: 0;
-  width: $left-width;
-}
 
 .right {
   right: 0;
-  width: $right-width
-}
+  width: $right-width;
 
-.sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  background-color: #444753; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  
   .header {
-    height: 50px;
+    height: 60px;
     width: inherit;
-    padding: 5px;
-    background-color: pink;
     position: relative;
+    display: table-cell;
+    text-align: center;
+    font-size: 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid white;
+    background-color: #345995 ;
+    .logo {
+      display: inline;
+      color: #F4FFF8;
+    }
+    .header-message {
+      display: inline;
+      font-size: 24px;
+      font-weight: 800;
+      color: #F4FFF8;
+    }
   }
   .owned-chats {
+    padding: 15px;
     width: inherit;
-    height: calc(50% - 25px);
+    height: calc(50% - 30px);
     position: relative;
-    background-color: blue;
     overflow-y: scroll;
+    border-bottom: 1px solid white;
+     
   }
+  /* New Chats for assignment */
   .new-chats {
+    padding: 15px;
     width: inherit;
     position: relative;
-    height: calc(50% - 25px);
-    background-color: magenta;
+    height: calc(50% - 30px);
     overflow-y: scroll;
   }
+}
+
+.left {
+  left: 0;
+  width: $left-width;
+
+  /* Header */
+  .header {
+    height: 60px;
+    width: inherit;
+    position: relative;
+    display: table-cell;
+    text-align: center;
+    font-size: 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid white;
+    background-color: #345995 ;
+    .logo {
+      display: inline;
+      color: #F4FFF8;
+    }
+    .header-message {
+      display: inline;
+      font-size: 24px;
+      font-weight: 800;
+      color: #F4FFF8;
+    }
+  }
+
+  /* Self-assigned chats */
+  .owned-chats {
+    padding: 15px;
+    width: inherit;
+    height: calc(50% - 30px);
+    position: relative;
+    overflow-y: scroll;
+    border-bottom: 1px solid white;
+     
+  }
+  /* New Chats for assignment */
+  .new-chats {
+    padding: 15px;
+    width: inherit;
+    position: relative;
+    height: calc(50% - 30px);
+    overflow-y: scroll;
+  }
+}
+
+
+
+/* Main components CSS */
+body.home {
+  font: 14px/20px "Lato", Arial, sans-serif;
+}
+.sidenav {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  background-color: $side-menu-grey;
+  color: white;
+  overflow-x: hidden;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    li {
+      padding-bottom: 15px;
+    }
+  }
+
+  .heading {
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 15px;
+    text-align:center;
+  }
+}
+
+.blank {
+  position: fixed;
+  height: 100%;
+  width: calc(100% - 275px);
+  margin-left: $left-width;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  display: table;
+  span {
+    line-height: 1.5;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  
 }
 
 .main {
-  position: relative;
+  position: fixed;
+  height: calc(100% - 160px);
+  width: calc(100% - 675px);
   margin-left: $left-width;
   margin-right: $right-width;
-  height: calc(100% - 100px);
-  overflow-y: hidden;
+  overflow: scroll;
+  border-bottom: 2px solid white;
+}
 
-  .chat-body {
-    overflow: scroll;
+.input {
+  position: fixed;
+  bottom: 0;
+  height: 160px;
+  width: calc(100% - 675px);
+  margin-left: $left-width;
+  margin-right: $right-width;
+  padding: 20px;
+  
+  textarea {
+    width: 100%;
+    border: none;
+    padding: 10px 20px;
+    font: 14px/22px "Lato", Arial, sans-serif;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    resize: none;
     
   }
-
-  ul li {
-    display: block;
-    width: inherit
-    
+  
+  .fa-file-o, .fa-file-image-o {
+    font-size: 16px;
+    color: gray;
+    cursor: pointer;
     
   }
-
-  li.sender {
-    float: left;
-  }
-
-  li.own {
+  
+  button {
     float: right;
+    color: $blue;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: #F2F5F8;
+    
+    &:hover {
+      color: darken($blue, 7%);
+    }
   }
-
 }
 
 
 
-/* Style page content */
-// .main {
-  // position: fixed;
-  // top: 0;
-  // left: 250px;
-  // right:350px; 
-  // height: 100%;
-  // width: 100%;
+// Miscellaneous CSS
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
 
-  // .chat-input {
-  //   position: fixed;
-  //   height: 250px;
+.online,
+.offline,
+.me {
+  margin-right: 3px;
+  font-size: 10px;
+}
+
+.online {
+  color: $green;
+}
+
+.offline {
+  color: $orange;
+}
+
+img {
+  float: left;
+}
+
+.about {
+  float: left;
+  margin-top: 8px;
+  padding-left: 8px;
+}
+
+.status {
+  color: $gray;
+  font-size: 14px;
+}
+
+.new-joiner {
+  color: $green;
+}
+
+.traits {
+  color: $gray;
+  font-size: 14px;
+}
+
+#default {
+  display:none;
+}
+
+.chat-history {
+  padding: 30px 30px 20px;
+  border-bottom: 2px solid white;
+  overflow-y: scroll;
+  
+
+  ul {
+    list-style: none;
+    margin-left:0;
+    padding-left:0;
+  }
+  
+  .message-data {
+    margin-bottom: 15px;
+  }
+  
+  .message-data-time {
+    color: lighten($gray, 8%);
+    padding-left: 6px;
+  }
+  
+  .message {      
+    color: white;
+    padding: 18px 20px;
+    line-height: 26px;
+    font-size: 16px;
+    border-radius: 7px;
+    margin-bottom: 30px;
+    max-width: 70%;
+    position: relative;
     
-  //   top: calc(100% - 250px);
-  // }
-// }
-/* The navigation menu links */
-// .sidenav a {
-//   padding: 6px 8px 6px 16px;
-//   text-decoration: none;
-//   font-size: 14px;
-//   color: white;
-//   display: block;
-// }
+    &:after {
+      bottom: 100%;
+      left: 7%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-bottom-color: $green;
+      border-width: 10px;
+      margin-left: -10px;
+    }
+  }
+  
+  .my-message {
+    background: $green;
+  }
+  
+  .other-message {
+    background: $blue;
+    
+    &:after {
+      border-bottom-color: $blue;
+      left: 93%;
+    }
+  }
+}
+.align-left {
+  text-align: left;
+}
 
-// /* When you mouse over the navigation links, change their color */
-// .sidenav a:hover {
-//   color: #f1f1f1;
-// }
+.align-right {
+  text-align: right;
+}
 
-
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-// @media screen and (max-height: 450px) {
-//   .sidenav {padding-top: 15px;}
-//   .sidenav a {font-size: 18px;}
-// }
+.float-right {
+  float: right;
+}
