@@ -45,3 +45,66 @@ body.login {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
+
+/* Home page */
+/* Variables */
+/* The sidebar menu */
+.left {
+  left: 0;
+  width: 250px; }
+
+.right {
+  right: 0;
+  width: 350px; }
+
+.sidenav {
+  height: 100%;
+  /* Full-height: remove this if you want "auto" height */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  background-color: #444753;
+  /* Black */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */ }
+  .sidenav .header {
+    height: 50px;
+    width: inherit;
+    padding: 5px;
+    background-color: pink;
+    position: relative; }
+  .sidenav .owned-chats {
+    width: inherit;
+    height: calc(50% - 25px);
+    position: relative;
+    background-color: blue;
+    overflow-y: scroll; }
+  .sidenav .new-chats {
+    width: inherit;
+    position: relative;
+    height: calc(50% - 25px);
+    background-color: magenta;
+    overflow-y: scroll; }
+
+.main {
+  position: relative;
+  margin-left: 250px;
+  margin-right: 350px;
+  height: calc(100% - 100px);
+  overflow-y: hidden; }
+  .main .chat-body {
+    overflow: scroll; }
+  .main ul li {
+    display: block;
+    width: inherit; }
+  .main li.sender {
+    float: left; }
+  .main li.own {
+    float: right; }
+
+/* Style page content */
+/* The navigation menu links */
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */

@@ -52,3 +52,122 @@ body.login {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+/* Home page */
+
+/* Variables */
+$left-width: 250px;
+$right-width:350px;
+$bottom-height: 50px;
+
+/* The sidebar menu */
+.left {
+  left: 0;
+  width: $left-width;
+}
+
+.right {
+  right: 0;
+  width: $right-width
+}
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  background-color: #444753; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  
+  .header {
+    height: 50px;
+    width: inherit;
+    padding: 5px;
+    background-color: pink;
+    position: relative;
+  }
+  .owned-chats {
+    width: inherit;
+    height: calc(50% - 25px);
+    position: relative;
+    background-color: blue;
+    overflow-y: scroll;
+  }
+  .new-chats {
+    width: inherit;
+    position: relative;
+    height: calc(50% - 25px);
+    background-color: magenta;
+    overflow-y: scroll;
+  }
+}
+
+.main {
+  position: relative;
+  margin-left: $left-width;
+  margin-right: $right-width;
+  height: calc(100% - 100px);
+  overflow-y: hidden;
+
+  .chat-body {
+    overflow: scroll;
+    
+  }
+
+  ul li {
+    display: block;
+    width: inherit
+    
+    
+  }
+
+  li.sender {
+    float: left;
+  }
+
+  li.own {
+    float: right;
+  }
+
+}
+
+
+
+/* Style page content */
+// .main {
+  // position: fixed;
+  // top: 0;
+  // left: 250px;
+  // right:350px; 
+  // height: 100%;
+  // width: 100%;
+
+  // .chat-input {
+  //   position: fixed;
+  //   height: 250px;
+    
+  //   top: calc(100% - 250px);
+  // }
+// }
+/* The navigation menu links */
+// .sidenav a {
+//   padding: 6px 8px 6px 16px;
+//   text-decoration: none;
+//   font-size: 14px;
+//   color: white;
+//   display: block;
+// }
+
+// /* When you mouse over the navigation links, change their color */
+// .sidenav a:hover {
+//   color: #f1f1f1;
+// }
+
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+// @media screen and (max-height: 450px) {
+//   .sidenav {padding-top: 15px;}
+//   .sidenav a {font-size: 18px;}
+// }
