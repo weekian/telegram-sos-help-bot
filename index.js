@@ -4,6 +4,7 @@ const morgan = require('morgan')
 const helmet = require('helmet')
 const cookieParser = require('cookie-parser')
 const log = require('./src/utility/logger')
+const bot = require('./src/bot/telegram')
 
 // Requiring defined routes
 const webPublicRoutes = require('./src/web/routes/rest/publicRoutes')
@@ -25,3 +26,5 @@ app.use('/api', webPublicRoutes)
 
 // Listening to specified port
 app.listen(process.env.PORT, () => log('app listening to ' + process.env.PORT))
+
+bot.initialize(app)
