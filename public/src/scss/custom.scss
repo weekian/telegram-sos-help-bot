@@ -350,7 +350,7 @@ body.home img {
   font-size: 14px;
 }
 
-#default {
+#details {
   display: none;
 }
 
@@ -417,7 +417,8 @@ body.home img {
   float: right;
 }
 
-#logout {
+#logout,
+.sidenav li {
   cursor: pointer;
 }
 

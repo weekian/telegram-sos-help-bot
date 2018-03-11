@@ -3,17 +3,13 @@
 
 const states = [
     'pendingName',
-    'pendingNameConfirmation',
     'pendingAge',
-    'pendingAgeConfirmation',
     'pendingGender',
-    'pendingGenderConfirmation',
     'pendingReasons',
-    'pendingReasonsConfirmation',
-    'pendingOverallConfirmation',
+    'pendingConfirmation',
     'processed'
 ]
-//0 to 9
+//0 to 5
 
 // Note: every line in the Telegram field input corresponds to an array
 const keyboardReplies = [

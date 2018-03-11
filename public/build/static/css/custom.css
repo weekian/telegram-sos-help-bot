@@ -288,7 +288,7 @@ body.home img {
   color: #92959E;
   font-size: 14px; }
 
-#default {
+#details {
   display: none; }
 
 .chat-history {
@@ -342,7 +342,8 @@ body.home img {
 .float-right {
   float: right; }
 
-#logout {
+#logout,
+.sidenav li {
   cursor: pointer; }
 
 ::-webkit-scrollbar {

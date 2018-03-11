@@ -91,14 +91,14 @@
   </div>
 
   <!-- Right side menu -->
-  <div class="sidenav right">
+  <div class="sidenav right" id="details">
     <div class="header">
       <!-- <div class="logo">
          <i class="fa fa-hand-paper-o fa-2x" aria-hidden="true"></i>
         <img src="static/images/male.png" height="40" width="40" alt="avatar">
       </div> -->
       <div class="header-message" style="font-size:18px;">
-        <div style="display:inline">Chat with John Kheng</div>
+        <div id="name" style="display:inline"></div>
         <div class="float-right" style="margin-right:10px;">
           <span id="logout">
             <i class="fa fa-sign-out fa-lg"></i>
@@ -122,19 +122,19 @@
         <div class="form-group row">
           <label for="Age-group" class="col-sm-3 col-form-label">Age</label>
           <div class="col-sm-9">
-            <input type="text" readonly class="form-control-plaintext background-gray" id="staticEmail" value="14 years old">
+            <input type="text" readonly class="form-control-plaintext background-gray" id="age">
           </div>
         </div>
         <div class="form-group row">
           <label for="gender" class="col-sm-3 col-form-label">Gender</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control-plaintext background-gray" readonly id="gender" value="female">
+            <input type="text" class="form-control-plaintext background-gray" readonly id="gender">
           </div>
         </div>
         <div class="form-group row">
           <label for="reason" class="col-sm-3 col-form-label">Reason</label>
           <div class="col-sm-9">
-            <input type="text" readonly class="form-control-plaintext background-gray" id="reason" value="Parents' Divorce">
+            <input type="text" readonly class="form-control-plaintext background-gray" id="reason">
           </div>
         </div>
         <!-- <div class="form-group row">
@@ -143,13 +143,14 @@
             <input type="text" class="form-control-plaintext background-gray severe" readonly id="health-assessment" value="Severe">
           </div>
         </div> -->
+        <input type='hidden' id="id" value=""> 
       </div>
     </div>
     <div class="right-notes">
       <div class="heading">
         Notes
       </div>
-      <p><span>[24/3/2017 15:13]</span><i>Wee Kian:</i> John doesn't want the family to break up</p>
+      
 
     </div>
     <div class="right-input">
@@ -160,7 +161,7 @@
   <!-- Main message details -->
   <div class="main chat-history" id="details">
     <ul>
-      <li class="clearfix">
+      <!-- <li class="clearfix">
         <div class="message-data align-right">
           <span class="message-data-time">10:10 AM, Today</span> &nbsp; &nbsp;
           <span class="message-data-name">weekian</span>
@@ -228,7 +229,7 @@
         <div class="message my-message">
           Actually everything was fine. I'm very excited to show this to our team.
         </div>
-      </li>
+      </li> -->
 
     </ul>
 
@@ -252,7 +253,43 @@
   </div>
 
 
-
+  <div class="modal fade" id="new-chat-details" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New Chat</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Name</label>
+              <input type="text" class="form-control" id="name" readonly>
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Age</label>
+              <input type="text" class="form-control" id="age" readonly>
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Gender</label>
+              <input type="text" class="form-control" id="gender" readonly>
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="col-form-label">Reason</label>
+              <input type="text" class="form-control" id="reason" readonly>
+            </div>
+            <input type='hidden' id="id" value=""> 
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="pick-up-new-chat">Pick Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
