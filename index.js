@@ -21,6 +21,8 @@ app.use(express.urlencoded({
     extended: true
 }))
 
+app.use(express.static('public/build'))
+
 // Registering routes
 app.use('/api', webPublicRoutes)
 
