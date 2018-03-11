@@ -56,9 +56,10 @@ body.login {
 /* Home page */
 
 /* Font imports */
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 /* Variables */
+
 $left-width: 275px;
 $right-width:400px;
 $bottom-height: 50px;
@@ -72,7 +73,6 @@ $side-menu-grey: #444753;
 .right {
   right: 0;
   width: $right-width;
-
   .header {
     height: 60px;
     width: inherit;
@@ -82,7 +82,7 @@ $side-menu-grey: #444753;
     font-size: 16px;
     vertical-align: middle;
     border-bottom: 1px solid white;
-    background-color: #345995 ;
+    background-color: #345995;
     .logo {
       display: inline;
       color: #F4FFF8;
@@ -94,29 +94,87 @@ $side-menu-grey: #444753;
       color: #F4FFF8;
     }
   }
-  .owned-chats {
+  .right-actions {
     padding: 15px;
-    width: inherit;
-    height: calc(50% - 30px);
+    width: inherit; // height: calc(10% - 20px);
+    font-size: 16px;
+    text-align: center;
+    position: relative;
+    overflow-y: hidden;
+    border-bottom: 1px solid white;
+  }
+  .right-details {
+    padding: 15px;
+    width: inherit; // height: calc(39% - 20px);
     position: relative;
     overflow-y: scroll;
     border-bottom: 1px solid white;
-     
+    .form {
+      display: block;
+      margin-top: 0em;
+      font-size: 16px;
+      .background-gray {
+        background-color: #F2F5F8 !important;
+        color: black;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 15px;
+      }
+      .severe {
+        background-color: #ff4c4c !important;
+      }
+    }
   }
   /* New Chats for assignment */
-  .new-chats {
+  .right-notes {
     padding: 15px;
+    height: inherit;;
     width: inherit;
-    position: relative;
-    height: calc(50% - 30px);
     overflow-y: scroll;
+    font-size: 15px;
+    span {
+      font-size: 12px;
+      font-weight: 400;
+      margin-right: 2px;
+    }
+    i {
+      margin-right: 5px;
+    }
+  }
+  .right-input {
+    padding: 10px;
+    width: inherit;
+    position: fixed;
+    border-top: 1px solid white;
+    bottom: 0;
+    input {
+      width: 100%;
+      border: none;
+      padding: 5px 5px;
+      font: 14px/22px "Lato", Arial, sans-serif;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      resize: none;
+    }
+    button {
+      float: right;
+      color: $blue;
+      font-size: 14px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      background: $side-menu-grey;
+      &:hover {
+        color: darken($blue, 7%);
+      }
+    }
   }
 }
 
 .left {
   left: 0;
   width: $left-width;
-
   /* Header */
   .header {
     height: 60px;
@@ -127,7 +185,7 @@ $side-menu-grey: #444753;
     font-size: 16px;
     vertical-align: middle;
     border-bottom: 1px solid white;
-    background-color: #345995 ;
+    background-color: #345995;
     .logo {
       display: inline;
       color: #F4FFF8;
@@ -139,7 +197,6 @@ $side-menu-grey: #444753;
       color: #F4FFF8;
     }
   }
-
   /* Self-assigned chats */
   .owned-chats {
     padding: 15px;
@@ -148,7 +205,6 @@ $side-menu-grey: #444753;
     position: relative;
     overflow-y: scroll;
     border-bottom: 1px solid white;
-     
   }
   /* New Chats for assignment */
   .new-chats {
@@ -160,12 +216,12 @@ $side-menu-grey: #444753;
   }
 }
 
-
-
 /* Main components CSS */
+
 body.home {
   font: 14px/20px "Lato", Arial, sans-serif;
 }
+
 .sidenav {
   height: 100%;
   position: fixed;
@@ -174,7 +230,6 @@ body.home {
   background-color: $side-menu-grey;
   color: white;
   overflow-x: hidden;
-
   ul {
     list-style: none;
     padding-left: 0;
@@ -182,12 +237,11 @@ body.home {
       padding-bottom: 15px;
     }
   }
-
   .heading {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     padding-bottom: 15px;
-    text-align:center;
+    text-align: center;
   }
 }
 
@@ -205,8 +259,6 @@ body.home {
     display: table-cell;
     vertical-align: middle;
   }
-
-  
 }
 
 .main {
@@ -227,7 +279,6 @@ body.home {
   margin-left: $left-width;
   margin-right: $right-width;
   padding: 20px;
-  
   textarea {
     width: 100%;
     border: none;
@@ -236,16 +287,7 @@ body.home {
     margin-bottom: 10px;
     border-radius: 5px;
     resize: none;
-    
   }
-  
-  .fa-file-o, .fa-file-image-o {
-    font-size: 16px;
-    color: gray;
-    cursor: pointer;
-    
-  }
-  
   button {
     float: right;
     color: $blue;
@@ -255,16 +297,11 @@ body.home {
     cursor: pointer;
     font-weight: bold;
     background: #F2F5F8;
-    
     &:hover {
       color: darken($blue, 7%);
     }
   }
-}
-
-
-
-// Miscellaneous CSS
+} // Miscellaneous CSS
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -289,7 +326,7 @@ body.home {
   color: $orange;
 }
 
-img {
+body.home img {
   float: left;
 }
 
@@ -314,31 +351,26 @@ img {
 }
 
 #default {
-  display:none;
+  display: none;
 }
 
 .chat-history {
   padding: 30px 30px 20px;
   border-bottom: 2px solid white;
   overflow-y: scroll;
-  
-
   ul {
     list-style: none;
-    margin-left:0;
-    padding-left:0;
+    margin-left: 0;
+    padding-left: 0;
   }
-  
   .message-data {
     margin-bottom: 15px;
   }
-  
   .message-data-time {
     color: lighten($gray, 8%);
     padding-left: 6px;
   }
-  
-  .message {      
+  .message {
     color: white;
     padding: 18px 20px;
     line-height: 26px;
@@ -347,7 +379,6 @@ img {
     margin-bottom: 30px;
     max-width: 70%;
     position: relative;
-    
     &:after {
       bottom: 100%;
       left: 7%;
@@ -362,20 +393,18 @@ img {
       margin-left: -10px;
     }
   }
-  
   .my-message {
     background: $green;
   }
-  
   .other-message {
     background: $blue;
-    
     &:after {
       border-bottom-color: $blue;
       left: 93%;
     }
   }
 }
+
 .align-left {
   text-align: left;
 }
@@ -386,4 +415,13 @@ img {
 
 .float-right {
   float: right;
+}
+
+#logout {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  background:transparent;
+  width:0;
 }

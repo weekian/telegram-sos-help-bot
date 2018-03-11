@@ -73,19 +73,69 @@ body.login {
       font-size: 24px;
       font-weight: 800;
       color: #F4FFF8; }
-  .right .owned-chats {
+  .right .right-actions {
     padding: 15px;
     width: inherit;
-    height: calc(50% - 30px);
+    font-size: 16px;
+    text-align: center;
+    position: relative;
+    overflow-y: hidden;
+    border-bottom: 1px solid white; }
+  .right .right-details {
+    padding: 15px;
+    width: inherit;
     position: relative;
     overflow-y: scroll;
     border-bottom: 1px solid white; }
-  .right .new-chats {
+    .right .right-details .form {
+      display: block;
+      margin-top: 0em;
+      font-size: 16px; }
+      .right .right-details .form .background-gray {
+        background-color: #F2F5F8 !important;
+        color: black;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 15px; }
+      .right .right-details .form .severe {
+        background-color: #ff4c4c !important; }
+  .right .right-notes {
     padding: 15px;
+    height: inherit;
     width: inherit;
-    position: relative;
-    height: calc(50% - 30px);
-    overflow-y: scroll; }
+    overflow-y: scroll;
+    font-size: 15px; }
+    .right .right-notes span {
+      font-size: 12px;
+      font-weight: 400;
+      margin-right: 2px; }
+    .right .right-notes i {
+      margin-right: 5px; }
+  .right .right-input {
+    padding: 10px;
+    width: inherit;
+    position: fixed;
+    border-top: 1px solid white;
+    bottom: 0; }
+    .right .right-input input {
+      width: 100%;
+      border: none;
+      padding: 5px 5px;
+      font: 14px/22px "Lato", Arial, sans-serif;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      resize: none; }
+    .right .right-input button {
+      float: right;
+      color: #94C2ED;
+      font-size: 14px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      background: #444753; }
+      .right .right-input button:hover {
+        color: #75b1e8; }
 
 .left {
   left: 0;
@@ -144,7 +194,7 @@ body.home {
       padding-bottom: 15px; }
   .sidenav .heading {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     padding-bottom: 15px;
     text-align: center; }
 
@@ -187,10 +237,6 @@ body.home {
     margin-bottom: 10px;
     border-radius: 5px;
     resize: none; }
-  .input .fa-file-o, .input .fa-file-image-o {
-    font-size: 16px;
-    color: gray;
-    cursor: pointer; }
   .input button {
     float: right;
     color: #94C2ED;
@@ -223,7 +269,7 @@ body.home {
 .offline {
   color: #E38968; }
 
-img {
+body.home img {
   float: left; }
 
 .about {
@@ -295,3 +341,10 @@ img {
 
 .float-right {
   float: right; }
+
+#logout {
+  cursor: pointer; }
+
+::-webkit-scrollbar {
+  background: transparent;
+  width: 0; }

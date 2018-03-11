@@ -71,7 +71,7 @@
         <li class="clearfix">
           <img src="static/images/male.png" height="45" width="45" alt="avatar" />
           <div class="about">
-            <div class="name">Leonary Cooper</div>
+            <div class="name">Leonard Cooper</div>
             <div class="traits">
               <i class="fa fa-thumb-tack new-joiner"></i> Joined 30 minutes ago
             </div>
@@ -97,68 +97,64 @@
          <i class="fa fa-hand-paper-o fa-2x" aria-hidden="true"></i>
         <img src="static/images/male.png" height="40" width="40" alt="avatar">
       </div> -->
-      <div class="header-message">
-        John Kheng
+      <div class="header-message" style="font-size:18px;">
+        <div style="display:inline">Chat with John Kheng</div>
+        <div class="float-right" style="margin-right:10px;">
+          <span id="logout">
+            <i class="fa fa-sign-out fa-lg"></i>
+          </span>
+        </div>
       </div>
     </div>
-    <div class="owned-chats">
+    <div class="right-actions">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-danger">Escalate</button>
+        <button type="button" class="btn btn-warning">Reassign</button>
+        <button type="button" class="btn btn-info">Schedule</button>
+        <button type="button" class="btn btn-success">Close</button>
+      </div>
+    </div>
+    <div class="right-details">
       <div class="heading">
         Details
       </div>
-      <ul class="list">
-        <li class="clearfix">
-          <img src="static/images/male.png" height="45" width="45" alt="avatar" />
-          <div class="about">
-            <div class="name">John Kheng</div>
-            <div class="status">
-              <i class="fa fa-circle online"></i> New messages received
-            </div>
+      <div class="form">
+        <div class="form-group row">
+          <label for="Age-group" class="col-sm-3 col-form-label">Age</label>
+          <div class="col-sm-9">
+            <input type="text" readonly class="form-control-plaintext background-gray" id="staticEmail" value="14 years old">
           </div>
-        </li>
-        <li class="clearfix">
-          <img src="static/images/male.png" height="45" width="45" alt="avatar" />
-          <div class="about">
-            <div class="name">Jeremy Lin</div>
-            <div class="status">
-              <i class="fa fa-circle offline"></i> Last message 7 hours ago
-            </div>
+        </div>
+        <div class="form-group row">
+          <label for="gender" class="col-sm-3 col-form-label">Gender</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control-plaintext background-gray" readonly id="gender" value="female">
           </div>
-        </li>
-      </ul>
+        </div>
+        <div class="form-group row">
+          <label for="reason" class="col-sm-3 col-form-label">Reason</label>
+          <div class="col-sm-9">
+            <input type="text" readonly class="form-control-plaintext background-gray" id="reason" value="Parents' Divorce">
+          </div>
+        </div>
+        <!-- <div class="form-group row">
+          <label for="health-assessment" class="col-sm-4 col-form-label">Mental Health Assessment</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control-plaintext background-gray severe" readonly id="health-assessment" value="Severe">
+          </div>
+        </div> -->
+      </div>
     </div>
-    <div class="new-chats">
+    <div class="right-notes">
       <div class="heading">
         Notes
       </div>
-      <ul class="list">
-        <li class="clearfix">
-          <img src="static/images/female.png" height="45" width="45" alt="avatar" />
-          <div class="about">
-            <div class="name">Penny Blossom</div>
-            <div class="traits">
-              <i class="fa fa-thumb-tack new-joiner"></i> Joined 7 hours ago
-            </div>
-          </div>
-        </li>
-        <li class="clearfix">
-          <img src="static/images/male.png" height="45" width="45" alt="avatar" />
-          <div class="about">
-            <div class="name">Leonary Cooper</div>
-            <div class="traits">
-              <i class="fa fa-thumb-tack new-joiner"></i> Joined 30 minutes ago
-            </div>
-          </div>
-        </li>
-        <li class="clearfix">
-          <img src="static/images/male.png" height="45" width="45" alt="avatar" />
-          <div class="about">
-            <div class="name">Will Wilton</div>
-            <div class="traits">
-              <i class="fa fa-thumb-tack new-joiner"></i> Joined moments ago
-            </div>
-          </div>
-        </li>
-      </ul>
+      <p><span>[24/3/2017 15:13]</span><i>Wee Kian:</i> John doesn't want the family to break up</p>
+
+    </div>
+    <div class="right-input">
+        <input type="text" name="notes-to-send" id="notes-to-send" placeholder="Type your notes"><br>
+        <button id="notes-button">Send</button>
     </div>
   </div>
   <!-- Main message details -->
@@ -167,19 +163,19 @@
       <li class="clearfix">
         <div class="message-data align-right">
           <span class="message-data-time">10:10 AM, Today</span> &nbsp; &nbsp;
-          <span class="message-data-name">Olia</span>
+          <span class="message-data-name">weekian</span>
           <i class="fa fa-circle me"></i>
 
         </div>
         <div class="message other-message float-right">
-          Hi Vincent, how are you? How is the project coming along?
+          Hi John, how are you? How is the project coming along?
         </div>
       </li>
 
       <li>
         <div class="message-data">
           <span class="message-data-name">
-            <i class="fa fa-circle online"></i> Vincent</span>
+            <i class="fa fa-circle online"></i> John</span>
           <span class="message-data-time">10:12 AM, Today</span>
         </div>
         <div class="message my-message">
@@ -190,7 +186,7 @@
       <li class="clearfix">
         <div class="message-data align-right">
           <span class="message-data-time">10:14 AM, Today</span> &nbsp; &nbsp;
-          <span class="message-data-name">Olia</span>
+          <span class="message-data-name">weekian</span>
           <i class="fa fa-circle me"></i>
 
         </div>
@@ -203,7 +199,7 @@
       <li>
         <div class="message-data">
           <span class="message-data-name">
-            <i class="fa fa-circle online"></i> Vincent</span>
+            <i class="fa fa-circle online"></i> John</span>
           <span class="message-data-time">10:20 AM, Today</span>
         </div>
         <div class="message my-message">
@@ -211,28 +207,28 @@
         </div>
       </li>
       <li class="clearfix">
-          <div class="message-data align-right">
-            <span class="message-data-time">10:14 AM, Today</span> &nbsp; &nbsp;
-            <span class="message-data-name">Olia</span>
-            <i class="fa fa-circle me"></i>
-  
-          </div>
-          <div class="message other-message float-right">
-            Well I am not sure. The rest of the team is not here yet. Maybe in an hour or so? Have you faced any problems at the last
-            phase of the project?
-          </div>
-        </li>
-  
-        <li>
-          <div class="message-data">
-            <span class="message-data-name">
-              <i class="fa fa-circle online"></i> Vincent</span>
-            <span class="message-data-time">10:20 AM, Today</span>
-          </div>
-          <div class="message my-message">
-            Actually everything was fine. I'm very excited to show this to our team.
-          </div>
-        </li>
+        <div class="message-data align-right">
+          <span class="message-data-time">10:14 AM, Today</span> &nbsp; &nbsp;
+          <span class="message-data-name">weekian</span>
+          <i class="fa fa-circle me"></i>
+
+        </div>
+        <div class="message other-message float-right">
+          Well I am not sure. The rest of the team is not here yet. Maybe in an hour or so? Have you faced any problems at the last
+          phase of the project?
+        </div>
+      </li>
+
+      <li>
+        <div class="message-data">
+          <span class="message-data-name">
+            <i class="fa fa-circle online"></i> John</span>
+          <span class="message-data-time">10:20 AM, Today</span>
+        </div>
+        <div class="message my-message">
+          Actually everything was fine. I'm very excited to show this to our team.
+        </div>
+      </li>
 
     </ul>
 
@@ -243,8 +239,8 @@
   <div class="input clearfix" id="details">
     <!-- <div class="chat-message clearfix"> -->
     <textarea name="message-to-send" id="message-to-send" placeholder="Type your message" rows="3"></textarea>
-    <button>Send</button>
-
+    <button id="message-button">Send</button>
+    
     <!-- </div> -->
   </div>
 
@@ -265,6 +261,8 @@
   <script src="static/vendors/jquery/dist/jquery.min.js"></script>
   <script src="static/vendors/popper.js/dist/umd/popper.min.js"></script>
   <script src="static/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="static/vendors/moment/min/moment.min.js"></script>
+  <script src="static/vendors/js-cookie/src/js.cookie.js"></script>
   <script src="static/js/socket.io.js"></script>
   <script src="static/js/custom.min.js"></script>
 </body>

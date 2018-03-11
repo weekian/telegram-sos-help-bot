@@ -15,6 +15,7 @@ router.post('/', celebrate({
     authenticate(req.body.email, req.body.password).then(token => {
         if (token !== null) {
             res.cookie(cookieName, token, cookieOpts)
+                .cookie('username', 'weekian')
                 .status(200)
                 .json({
                     redirect: '/home.html'
