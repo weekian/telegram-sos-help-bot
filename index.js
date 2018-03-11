@@ -15,7 +15,7 @@ const app = express()
 // Setting up middlewares
 app.use(helmet())
 app.use(morgan('combined'))
-app.use(cookieParser(process.env.COOKIE_TOKEN))
+// app.use(cookieParser(process.env.COOKIE_TOKEN))
 app.use(express.json())
 app.use(express.urlencoded({
     extended: true
