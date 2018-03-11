@@ -9,11 +9,18 @@
     "server": "node_modules/nodemon/bin/nodemon.js --exec \"node -r dotenv/config index.js\" ",
     "eslint": "./node_modules/.bin/eslint index.js server/**.js",
     "gulp": "node_modules/gulp/bin/gulp.js",
-    "local": "node_modules/concurrently/src/main.js -k --names \"FRONT,API\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run gulp\" \"npm run server\""
+    "build": "yarn install && npm run build-bower",
+    "build-bower": "./node_modules/bower/bin/bower install",
+    "local": "node_modules/concurrently/src/main.js -k --names \"FRONT,API\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run gulp\" \"npm run server\"",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/weekian/telegram-sos-help-bot.git"
+  },
+  "engines": {
+    "node": "9.5.0",
+    "npm": "5.6.0"
   },
   "author": "Yeam Wee Kian <weekian.yeam@gmail.com>",
   "license": "MIT",
@@ -24,6 +31,7 @@
   "dependencies": {
     "bcrypt": "^1.0.3",
     "bluebird": "^3.5.1",
+    "bower": "^1.8.2",
     "celebrate": "^7.0.4",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.2",
