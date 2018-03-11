@@ -10,11 +10,12 @@ const whiteListedChatIds = [
 
 module.exports = {
     initialize: (io) => {
+        this.io = io
         log('Initializing Socket connection')
         io.on('connection', (socket) => {
             log('Connection established')
             this.socket = socket
-            this.io = io
+            
             registerRoutes(socket, io)
         })
     },

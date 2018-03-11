@@ -128,7 +128,7 @@ $(document).ready(function(){
     })
 
     if(window.location.href.endsWith('/home.html')){
-        socket = io.connect('http://localhost:8080')
+        socket = io.connect()
         socket.on('newChat', function(data){
             console.log(JSON.stringify(data, null, 4))
             localStorage.setItem(data.id, JSON.stringify(data))
@@ -148,6 +148,7 @@ $(document).ready(function(){
             console.log(JSON.stringify(data, null, 4))
             var time = moment(data.timeNow,'D/MM/YYYY hh:mm A').format('h:mm A')
             populateChatMessage(time, data.name, data.msg, false)
+            scrollToBottom()
         })
     }
 
