@@ -3,7 +3,7 @@ const express = require('express')
 const morgan = require('morgan')
 const helmet = require('helmet')
 const cookieParser = require('cookie-parser')
-// const log = require('./src/utility/logger')
+const log = require('./src/utility/logger')
 // const bot = require('./src/bot/telegram')
 
 // Requiring defined routes

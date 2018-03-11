@@ -2,7 +2,7 @@
 
 const logger = require('winston')
 
-module.exports = (text, keys) => {
+module.exports = (text, ...keys) => {
     logger.info(text)
     keys.forEach(e => {
         try {
