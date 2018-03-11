@@ -4,10 +4,10 @@ const morgan = require('morgan')
 const helmet = require('helmet')
 const cookieParser = require('cookie-parser')
 const log = require('./src/utility/logger')
-const bot = require('./src/bot/telegram')
+// const bot = require('./src/bot/telegram')
 
 // Requiring defined routes
-const webPublicRoutes = require('./src/web/routes/rest/publicRoutes')
+// const webPublicRoutes = require('./src/web/routes/rest/publicRoutes')
 
 // Setting up express server
 const app = express()
@@ -24,9 +24,9 @@ app.use(express.urlencoded({
 app.use(express.static('public/build'))
 
 // Registering routes
-app.use('/api', webPublicRoutes)
+// app.use('/api', webPublicRoutes)
 
 // Listening to specified port
 app.listen(process.env.PORT, () => log('app listening to ' + process.env.PORT))
 
-bot.initialize(app)
+// bot.initialize(app)
