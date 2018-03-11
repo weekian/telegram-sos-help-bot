@@ -17,6 +17,9 @@
     "type": "git",
     "url": "git+https://github.com/weekian/telegram-sos-help-bot.git"
   },
+  "engines": {
+    "node":"9.5.0"
+  },
   "author": "Yeam Wee Kian <weekian.yeam@gmail.com>",
   "license": "MIT",
   "bugs": {
