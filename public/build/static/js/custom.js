@@ -148,6 +148,7 @@ $(document).ready(function(){
             console.log(JSON.stringify(data, null, 4))
             var time = moment(data.timeNow,'D/MM/YYYY hh:mm A').format('h:mm A')
             populateChatMessage(time, data.name, data.msg, false)
+            scrollToBottom()
         })
     }
 
