@@ -5,7 +5,10 @@ const emitter = require('../../../utility/emitter').getEmitter()
 
 
 const whiteListedChatIds = [
-    46233065
+    46233065,
+    175960319,
+    77114691,
+    417714180
 ]
 
 module.exports = {
