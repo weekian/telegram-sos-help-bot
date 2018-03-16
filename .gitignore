@@ -72,3 +72,7 @@ TODO.md
 # Testing sandbox
 sandbox.js
 
+database/.vs/database/v15/.suo
+database/.vs/ProjectSettings.json
+database/.vs/slnx.sqlite
+database/.vs/VSWorkspaceState.json
