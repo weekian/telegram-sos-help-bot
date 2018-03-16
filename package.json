@@ -43,7 +43,7 @@
     "moment": "^2.21.0",
     "moment-timezone": "^0.5.14",
     "morgan": "^1.9.0",
-    "sequelize": "^4.35.2",
+    "sequelize": "^4.37.0",
     "socket.io": "^2.0.4",
     "socket.io-cookie-parser": "^1.0.0",
     "telegraf": "^3.17.5",
